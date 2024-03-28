@@ -161,110 +161,105 @@ ORDER BY final_analysis
 
 -- Below is the total ouput from the final anlysis:
 
-# user_id, final_analysis
-'14', 'moderate'
-'76', 'moderate'
-'54', 'moderate'
-'57', 'moderate'
-'21', 'moderate'
-'75', 'moderate'
-'5',  'moderate'
-'24', 'moderate'
-'41', 'moderate'
-'66', 'moderate'
-'71', 'moderate'
-'36', 'moderate'
-'91', 'moderate'
-'37', 'moderate'
-'4',  'moderate'
-'87', 'moderate'
-'99', 'moderate'
-'97', 'moderate'
-'84', 'moderate'
-'40', 'moderate'
-'22', 'moderate'
-'39', 'moderate'
-'96', 'moderate'
-'69', 'moderate'
-'95', 'moderate'
-'85', 'moderate'
-'93', 'moderate'
-'94', 'moderate'
-'31', 'moderate'
-'70', 'moderate'
-'20', 'moderate'
-'61', 'moderate'
-'73', 'moderate'
-'92', 'moderate'
-'100', 'moderate'
-'98', 'moderate'
-'50', 'uncertain'
-'48', 'uncertain'
-'9',  'uncertain'
-'23', 'uncertain'
-'3',  'uncertain'
-'47', 'uncertain'
-'74', 'uncertain'
-'64', 'uncertain'
-'81', 'uncertain'
-'90', 'uncertain'
-'29', 'uncertain'
-'67', 'uncertain'
-'43', 'uncertain'
-'68', 'uncertain'
-'19', 'uncertain'
-'32', 'uncertain'
-'89', 'uncertain'
-'38', 'uncertain'
-'63', 'uncertain'
-'77', 'uncertain'
-'12', 'uncertain'
-'30', 'uncertain'
-'65', 'uncertain'
-'7',  'uncertain'
-'79', 'uncertain'
-'72', 'uncertain'
-'86', 'uncertain'
-'45', 'uncertain'
-'27', 'uncertain'
-'1',  'uncertain'
-'28', 'uncertain'
-'80', 'uncertain'
-'53', 'uncertain'
-'26', 'uncertain'
-'51', 'uncertain'
-'78', 'uncertain'
-'42', 'uncertain'
-'88', 'uncertain'
-'55', 'uncertain'
-'59', 'uncertain'
-'13', 'uncertain'
-'49', 'uncertain'
-'15', 'uncertain'
-'11', 'uncertain'
-'17', 'uncertain'
-'18', 'uncertain'
-'83', 'uncertain'
-'34', 'uncertain'
-'56', 'uncertain'
-'10', 'uncertain'
-'35', 'uncertain'
-'58', 'uncertain'
-'82', 'uncertain'
-'2',  'uncertain'
-'60', 'uncertain'
-'44', 'uncertain'
-'8',  'uncertain'
-'25', 'uncertain'
-'46', 'uncertain'
-'6',  'uncertain'
-'16', 'uncertain'
-'62', 'uncertain'
-'33', 'uncertain'
-'52', 'uncertain'
-
-
-
-
-
-
+| user_id | final_analysis |
+|---------|----------------|
+| '14'    | 'moderate'     |
+| '76'    | 'moderate'     |
+| '54'    | 'moderate'     |
+| '57'    | 'moderate'     |
+| '21'    | 'moderate'     |
+| '75'    | 'moderate'     |
+| '5'     | 'moderate'     |
+| '24'    | 'moderate'     |
+| '41'    | 'moderate'     |
+| '66'    | 'moderate'     |
+| '71'    | 'moderate'     |
+| '36'    | 'moderate'     |
+| '91'    | 'moderate'     |
+| '37'    | 'moderate'     |
+| '4'     | 'moderate'     |
+| '87'    | 'moderate'     |
+| '99'    | 'moderate'     |
+| '97'    | 'moderate'     |
+| '84'    | 'moderate'     |
+| '40'    | 'moderate'     |
+| '22'    | 'moderate'     |
+| '39'    | 'moderate'     |
+| '96'    | 'moderate'     |
+| '69'    | 'moderate'     |
+| '95'    | 'moderate'     |
+| '85'    | 'moderate'     |
+| '93'    | 'moderate'     |
+| '94'    | 'moderate'     |
+| '31'    | 'moderate'     |
+| '70'    | 'moderate'     |
+| '20'    | 'moderate'     |
+| '61'    | 'moderate'     |
+| '73'    | 'moderate'     |
+| '92'    | 'moderate'     |
+| '100'   | 'moderate'     |
+| '98'    | 'moderate'     |
+| '50'    | 'uncertain'    |
+| '48'    | 'uncertain'    |
+| '9'     | 'uncertain'    |
+| '23'    | 'uncertain'    |
+| '3'     | 'uncertain'    |
+| '47'    | 'uncertain'    |
+| '74'    | 'uncertain'    |
+| '64'    | 'uncertain'    |
+| '81'    | 'uncertain'    |
+| '90'    | 'uncertain'    |
+| '29'    | 'uncertain'    |
+| '67'    | 'uncertain'    |
+| '43'    | 'uncertain'    |
+| '68'    | 'uncertain'    |
+| '19'    | 'uncertain'    |
+| '32'    | 'uncertain'    |
+| '89'    | 'uncertain'    |
+| '38'    | 'uncertain'    |
+| '63'    | 'uncertain'    |
+| '77'    | 'uncertain'    |
+| '12'    | 'uncertain'    |
+| '30'    | 'uncertain'    |
+| '65'    | 'uncertain'    |
+| '7'     | 'uncertain'    |
+| '79'    | 'uncertain'    |
+| '72'    | 'uncertain'    |
+| '86'    | 'uncertain'    |
+| '45'    | 'uncertain'    |
+| '27'    | 'uncertain'    |
+| '1'     | 'uncertain'    |
+| '28'    | 'uncertain'    |
+| '80'    | 'uncertain'    |
+| '53'    | 'uncertain'    |
+| '26'    | 'uncertain'    |
+| '51'    | 'uncertain'    |
+| '78'    | 'uncertain'    |
+| '42'    | 'uncertain'    |
+| '88'    | 'uncertain'    |
+| '55'    | 'uncertain'    |
+| '59'    | 'uncertain'    |
+| '13'    | 'uncertain'    |
+| '49'    | 'uncertain'    |
+| '15'    | 'uncertain'    |
+| '11'    | 'uncertain'    |
+| '17'    | 'uncertain'    |
+| '18'    | 'uncertain'    |
+| '83'    | 'uncertain'    |
+| '34'    | 'uncertain'    |
+| '56'    | 'uncertain'    |
+| '10'    | 'uncertain'    |
+| '35'    | 'uncertain'    |
+| '58'    | 'uncertain'    |
+| '82'    | 'uncertain'    |
+| '2'     | 'uncertain'    |
+| '60'    | 'uncertain'    |
+| '44'    | 'uncertain'    |
+| '8'     | 'uncertain'    |
+| '25'    | 'uncertain'    |
+| '46'    | 'uncertain'    |
+| '6'     | 'uncertain'    |
+| '16'    | 'uncertain'    |
+| '62'    | 'uncertain'    |
+| '33'    | 'uncertain'    |
+| '52'    | 'uncertain'    |

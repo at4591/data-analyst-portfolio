@@ -31,16 +31,86 @@ ORDER BY AVG(timestampdiff(SECOND, p.created_at, l.created_at))
 ;
 
 
--- Below is a sample of the ouput from the first 10 rows:
+-- Below is the output of the above query:
 
-# id, username,             user_average_time_to_like_sec, site_AVG_time_to_like_sec, time_to_like_diff_from_AVG_sec, prob_user_is_robot
-'87', 'Rick29',              '43.0000',                     '628.97',                   '-585.97',                      'high'
-'85', 'Milford_Gleichner42', '43.0000',                     '628.97',                   '-585.97',                      'high'
-'84', 'Alysa22',             '43.0000',                     '628.97',                   '-585.97',                      'high'
-'5', 'Aniya_Hackett',        '43.0000',                     '628.97',                   '-585.97',                      'high'
-'4', 'Arely_Bogan63',        '43.0000',                     '628.97',                   '-585.97',                      'high'
-'93', 'Willie_Leuschke',     '223.0000',                    '628.97',                   '-405.97',                      'moderate'
-'3', 'Harley_Lind18',        '223.0000',                    '628.97',                   '-405.97',                      'moderate'
-'2', 'Andre_Purdy85',        '223.0000',                    '628.97',                   '-405.97',                      'moderate'
-'92', 'Frederik_Rice',       '223.0000',                    '628.97',                   '-405.97',                      'moderate'
-'91', 'Bethany20',           '223.0000',                    '628.97',                   '-405.97',                      'moderate'
++-----+-----------------------+-------------------------------+---------------------------+--------------------------------+--------------------+
+| id  | username              | user_average_time_to_like_sec | site_AVG_time_to_like_sec | time_to_like_diff_from_AVG_sec | prob_user_is_robot |
++-----+-----------------------+-------------------------------+---------------------------+--------------------------------+--------------------+
+|  87 | Rick29                |                       43.0000 |                    628.97 |                        -585.97 | high               |
+|  85 | Milford_Gleichner42   |                       43.0000 |                    628.97 |                        -585.97 | high               |
+|  84 | Alysa22               |                       43.0000 |                    628.97 |                        -585.97 | high               |
+|   5 | Aniya_Hackett         |                       43.0000 |                    628.97 |                        -585.97 | high               |
+|   4 | Arely_Bogan63         |                       43.0000 |                    628.97 |                        -585.97 | high               |
+|  93 | Willie_Leuschke       |                      223.0000 |                    628.97 |                        -405.97 | moderate           |
+|   3 | Harley_Lind18         |                      223.0000 |                    628.97 |                        -405.97 | moderate           |
+|   2 | Andre_Purdy85         |                      223.0000 |                    628.97 |                        -405.97 | moderate           |
+|  92 | Frederik_Rice         |                      223.0000 |                    628.97 |                        -405.97 | moderate           |
+|  91 | Bethany20             |                      223.0000 |                    628.97 |                        -405.97 | moderate           |
+|  82 | Aracely.Johnston98    |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  15 | Billy52               |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  78 | Colten.Harris76       |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  94 | Damon35               |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  28 | Dario77               |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  27 | Darwin29              |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  20 | Delpha.Kihn           |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  12 | Dereck65              |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  54 | Duane60               |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  63 | Elenor88              |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  67 | Emilio_Bernier52      |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  70 | Erick5                |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  16 | Annalise.McKenzie16   |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  50 | Gerard79              |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  48 | Granville_Kutch       |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|   9 | Gus93                 |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  19 | Hailee26              |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  13 | Alexandro35           |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  47 | Harrison.Beatty50     |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  98 | Imani_Nicolas17       |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  32 | Irwin.Larson          |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  14 | Jaclyn81              |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  76 | Janelle.Nikolaus81    |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  43 | Janet.Armstrong       |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+| 100 | Javonte83             |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  73 | Jaylan.Lakin          |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  61 | Jayson65              |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  38 | Jordyn.Jacobson2      |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  26 | Josianne.Friesen      |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  57 | Julien_Schmidt        |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  11 | Justina.Gaylord27     |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  30 | Kaley9                |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  69 | Karley_Bosco          |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  79 | Katarina.Dibbert      |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  72 | Kathryn80             |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  96 | Keenan.Schamberger60  |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  39 | Kelsi26               |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  22 | Kenneth64             |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  35 | Lennie_Hartmann40     |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  75 | Leslie67              |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  46 | Malinda_Streich       |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  24 | Maxwell.Halvorson     |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  42 | Maya.Farrell          |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  41 | Mckenna17             |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  55 | Meggie_Doyle          |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  66 | Mike.Auer39           |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  99 | Alek_Watsica          |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  71 | Nia_Haag              |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  95 | Nicole71              |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  17 | Norbert_Carroll35     |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  18 | Odessa2               |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  36 | Ollie_Ledner37        |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  56 | Peter.Stehr0          |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  10 | Presley_McClure       |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  40 | Rafael.Hickle2        |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  62 | Ressie_Stanton46      |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  31 | Aiyana_Hoeger         |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  21 | Rocio33               |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  60 | Sam52                 |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  44 | Seth46                |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|   8 | Tabitha_Schamberger11 |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  97 | Tomas.Beatty93        |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|   6 | Travon.Waters         |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  65 | Adelle96              |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  37 | Yazmin_Mills95        |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  33 | Yvette.Gottlieb91     |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
+|  52 | Zack_Kemmer93         |                      703.0000 |                    628.97 |                          74.03 | uncertain          |
++-----+-----------------------+-------------------------------+---------------------------+--------------------------------+--------------------+
