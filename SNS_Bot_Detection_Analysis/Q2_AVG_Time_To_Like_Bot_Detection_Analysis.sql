@@ -30,6 +30,7 @@ GROUP BY u.id, u.username
 ORDER BY AVG(timestampdiff(SECOND, p.created_at, l.created_at))
 ;
 
+[Link to Tableau visualization](https://public.tableau.com/app/profile/aryan.tehrani/viz/Q1_robot_num_likes/Q2?publish=yes)
 
 -- Below is the output of the above query:
 

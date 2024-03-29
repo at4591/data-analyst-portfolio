@@ -35,6 +35,8 @@ ORDER BY prob_user_is_robot
 shows more repeated data than the others.*** 
 */
 
+[Link to Tableau visualization](https://public.tableau.com/app/profile/aryan.tehrani/viz/Q1_robot_num_likes/Q1?publish=yes) to visit the website.
+
 +-----+-----------------------+------------------+----------------------------+---------------------------+--------------------+
 | id  | username              | user_total_likes | site_AVG_total_likes_count | total_likes_diff_from_AVG | prob_user_is_robot |
 +-----+-----------------------+------------------+----------------------------+---------------------------+--------------------+

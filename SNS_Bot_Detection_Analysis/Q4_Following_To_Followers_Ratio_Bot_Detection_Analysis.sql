@@ -45,6 +45,7 @@ GROUP BY user_id
 ORDER BY prob_user_is_robot;
 
 
+[Link to Tableau visualization](https://public.tableau.com/app/profile/aryan.tehrani/viz/Q1_robot_num_likes/Q4?publish=yes)
 
 -- Below is a sample of the ouput from the top 10 rows:
 /* 

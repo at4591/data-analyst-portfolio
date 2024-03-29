@@ -158,6 +158,8 @@ ORDER BY final_analysis
 ;
 
 
+[Link to Tableau visualization](https://public.tableau.com/app/profile/aryan.tehrani/viz/Q1_robot_num_likes/Final_Analysis?publish=yes)
+
 
 -- Below is the total ouput from the final anlysis:
 
