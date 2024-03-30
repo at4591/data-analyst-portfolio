@@ -1,4 +1,4 @@
-/*
+<!--
 Below is the fourth in five queries that extract various aspects of user 
 behavior that mimicks typical bot-like behavior on SNS services like instagram. 
 Specifically, the query below outputs each user's total followers, the site
@@ -10,7 +10,7 @@ a bot: "high", "moderate", or "uncertain".
 
 The reasoning behind this query was that bots typically follow an inordinate
 amount of users, yet have a very small following. 
-*/
+-->
 
 
 
@@ -48,10 +48,10 @@ ORDER BY prob_user_is_robot;
 [Link to Tableau visualization](https://public.tableau.com/app/profile/aryan.tehrani/viz/Q1_robot_num_likes/Q4?publish=yes)
 
 -- Below is a sample of the ouput from the top 10 rows:
-/* 
+<!--
 *** Please note again that this is from simulated data, and this query in particular
 shows more repeated data than the others.*** 
-*/
+-->
 
 +---------+-----------------+--------------------------+-------------------------------+-----------------+--------------------------+-------------------------------+---------------------------+------------------------------------+-----------------------------------------+--------------------+
 | user_id | total_followers | site_AVG_total_followers | total_followers_diff_from_AVG | total_following | site_AVG_total_following | total_following_diff_from_AVG | following_followers_ratio | site_AVG_following_followers_ratio | following_followers_ratio_diff_from_AVG | prob_user_is_robot |

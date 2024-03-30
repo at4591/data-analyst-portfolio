@@ -1,4 +1,4 @@
-/*
+<!--
 Below is the second in five queries that extract various aspects of user 
 behavior that mimicks typical bot-like behavior on SNS services like instagram. 
 Specifically, the query below outputs how long it takes each user to like photos
@@ -9,7 +9,7 @@ see how many seconds after photos are posted they send a like across all of the
 photos they have liked. This was important as one istance of a fast like is clearly 
 not evidence that a given user is a bot, but if their average is highly aberrant, 
 then that is considerably more substantial evidence. 
-*/
+-->
 
 
 

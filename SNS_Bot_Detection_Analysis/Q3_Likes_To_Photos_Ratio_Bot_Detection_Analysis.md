@@ -1,4 +1,4 @@
-/*
+<!--
 Below is the third in five queries that extract various aspects of user 
 behavior that mimicks typical bot-like behavior on SNS services like instagram. 
 Specifically, the query below outputs the number of photos each user has posted,
@@ -12,7 +12,7 @@ The thinking behind this query was that bots typically post very few photos, but
 send a lot of likes to gain followers and build connections. As such, comparing 
 their likes-to-photos to the site average offers good context into determining
 if a user is a bot or not. 
-*/
+-->
 
 
 

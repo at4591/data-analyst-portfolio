@@ -1,4 +1,4 @@
-/* 
+<!--
 Below is the first in five queries that extract various aspects of user 
 behavior that mimicks typical bot-like behavior on SNS services like instagram. 
 Specifically, the query below is the simplest of the five, as it simply outputs 
@@ -10,7 +10,7 @@ purpose is to give additional context to users' behaviors from a more broad,
 high-level perspective. 
 
 The ouput for this query can be found in the readme section for this project
-*/
+-->
 
 -- average number of likes per user (throughout time using the site/app):
 SELECT u.id, u.username, 
@@ -30,12 +30,12 @@ ORDER BY prob_user_is_robot
 
 
 -- Below is a sample of the ouput from the first 10 rows:
-/* 
+<!--
 *** Please note again that this is from simulated data, and this query in particular
 shows more repeated data than the others.*** 
-*/
+-->
 
-[Link to Tableau visualization](https://public.tableau.com/app/profile/aryan.tehrani/viz/Q1_robot_num_likes/Q1?publish=yes) to visit the website.
+[Link to Tableau visualization](https://public.tableau.com/app/profile/aryan.tehrani/viz/Q1_robot_num_likes/Q1?publish=yes)
 
 +-----+-----------------------+------------------+----------------------------+---------------------------+--------------------+
 | id  | username              | user_total_likes | site_AVG_total_likes_count | total_likes_diff_from_AVG | prob_user_is_robot |

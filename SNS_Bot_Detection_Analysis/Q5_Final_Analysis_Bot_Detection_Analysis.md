@@ -129,7 +129,7 @@ GROUP BY user_id;
 
 -- FINAL ANALYSIS:
 
-/*
+<!--
 Below is the final in five queries that extract various aspects of user 
 behavior that mimicks typical bot-like behavior on SNS services like instagram. 
 Specifically, the query below evaluates how many times each user is determined
@@ -144,7 +144,7 @@ user, then finally produce the final probabilities. Based on the criteria, no us
 was evaluated as "high" probability for being a bot as the criteria was a bit
 conservative/strict, however, even "moderate" would be cause for concern if this 
 were a real SNS service. 
-*/
+-->
 
 SELECT user_id,
        CASE
