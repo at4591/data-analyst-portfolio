@@ -1,8 +1,9 @@
 -- AGGREGATED RESULTS --
 
--- BELOW ARE THE FOUR SEPARATE QUERIES REDEFINED AS TEMPORARY TABLES:
--- *** At the bottom is the final analysis with a thorough description ***
+BELOW ARE THE FOUR SEPARATE QUERIES REDEFINED AS TEMPORARY TABLES:
+*** At the bottom is the final analysis with a thorough description ***
 
+```sql
 CREATE TEMPORARY TABLE Q1_num_likes_per_user AS
 SELECT u.id AS user_id, u.username AS username, 
 COUNT(l.photo_id) AS user_total_likes, 
@@ -102,14 +103,14 @@ FROM (
 ) AS subquery
 GROUP BY user_id
 ORDER BY prob_user_is_robot; 
-
+```
 
 
 
 
 
 -- BELOW IS THE AGGREGATE OF THE ABOVE FOUR QUERIES:
-
+```sql
 CREATE TEMPORARY TABLE aggregated_results AS
 SELECT user_id,
        SUM(CASE WHEN prob_user_is_robot = 'high' THEN 1 ELSE 0 END) AS high_count,
@@ -124,12 +125,12 @@ FROM (
     SELECT user_id, prob_user_is_robot FROM Q4_following_to_followers
 ) AS subquery
 GROUP BY user_id;
-
+```
 
 
 -- FINAL ANALYSIS:
 
-<!--
+
 Below is the final in five queries that extract various aspects of user 
 behavior that mimicks typical bot-like behavior on SNS services like instagram. 
 Specifically, the query below evaluates how many times each user is determined
@@ -144,8 +145,8 @@ user, then finally produce the final probabilities. Based on the criteria, no us
 was evaluated as "high" probability for being a bot as the criteria was a bit
 conservative/strict, however, even "moderate" would be cause for concern if this 
 were a real SNS service. 
--->
 
+```sql
 SELECT user_id,
        CASE
            WHEN high_count >= 3 THEN 'high'
@@ -156,7 +157,7 @@ SELECT user_id,
 FROM aggregated_results
 ORDER BY final_analysis
 ;
-
+```
 
 [Link to Tableau visualization](https://public.tableau.com/app/profile/aryan.tehrani/viz/Q1_robot_num_likes/Final_Analysis?publish=yes)
 
