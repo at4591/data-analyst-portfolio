@@ -1,6 +1,7 @@
--- AGGREGATED RESULTS --
+AGGREGATED RESULTS
 
 BELOW ARE THE FOUR SEPARATE QUERIES REDEFINED AS TEMPORARY TABLES:
+
 *** At the bottom is the final analysis with a thorough description ***
 
 ```sql
@@ -108,7 +109,7 @@ ORDER BY prob_user_is_robot;
 
 
 
--- BELOW IS THE AGGREGATE OF THE ABOVE FOUR QUERIES:
+BELOW IS THE AGGREGATE OF THE ABOVE FOUR QUERIES:
 ```sql
 CREATE TEMPORARY TABLE aggregated_results AS
 SELECT user_id,
@@ -127,7 +128,7 @@ GROUP BY user_id;
 ```
 
 
--- FINAL ANALYSIS:
+FINAL ANALYSIS:
 
 
 Below is the final in five queries that extract various aspects of user 
@@ -169,7 +170,7 @@ ORDER BY final_analysis
 [Link to Tableau visualization](https://public.tableau.com/app/profile/aryan.tehrani/viz/Q1_robot_num_likes/Final_Analysis?publish=yes)
 
 
--- Below is the total ouput from the final anlysis:
+Below is the total ouput from the final anlysis:
 
 | user_id | final_analysis |
 |---------|----------------|

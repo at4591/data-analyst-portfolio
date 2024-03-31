@@ -29,7 +29,7 @@ ORDER BY prob_user_is_robot
 [Link to Tableau visualization](https://public.tableau.com/app/profile/aryan.tehrani/viz/Q1_robot_num_likes/Q1?publish=yes)
 
 
--- Below is the output of the above query:
+Below is the output of the above query:
 
 *** Please note again that this is from simulated data, and this query in particular
 shows more repeated data than the others. *** 

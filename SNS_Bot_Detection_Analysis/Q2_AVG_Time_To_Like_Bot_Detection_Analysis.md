@@ -32,7 +32,7 @@ ORDER BY AVG(timestampdiff(SECOND, p.created_at, l.created_at))
 [Link to Tableau visualization](https://public.tableau.com/app/profile/aryan.tehrani/viz/Q1_robot_num_likes/Q2?publish=yes)
 
 
--- Below is the output of the above query:
+Below is the output of the above query:
 
 | id  | username              | user_average_time_to_like_sec | site_AVG_time_to_like_sec | time_to_like_diff_from_AVG_sec | prob_user_is_robot |
 |-----|-----------------------|-------------------------------|---------------------------|--------------------------------|--------------------|

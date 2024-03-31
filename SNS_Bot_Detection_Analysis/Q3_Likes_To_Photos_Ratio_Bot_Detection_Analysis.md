@@ -53,7 +53,7 @@ ORDER BY
 [Link to Tableau visualization](https://public.tableau.com/app/profile/aryan.tehrani/viz/Q1_robot_num_likes/Q3?publish=yes)
 
 
--- Below is the output of the above query:
+Below is the output of the above query:
 
 | id  | username              | num_photos | site_AVG_num_photos | num_photos_diff_from_AVG | num_likes_sent | site_AVG_likes_sent | likes_sent_diff_from_AVG | likes_photos_ratio | site_AVG_likes_photos_ratio | likes_photos_ratio_diff_from_AVG | prob_user_is_robot |
 |-----|-----------------------|------------|---------------------|--------------------------|----------------|---------------------|--------------------------|--------------------|-----------------------------|----------------------------------|--------------------|
