@@ -1,5 +1,5 @@
 Below is the second in five queries that extract various aspects of user 
-behavior that mimicks typical bot-like behavior on SNS services like instagram. 
+behaviors that mimick typical bot-like behaviors on SNS services like instagram. 
 Specifically, the query below outputs how long it takes each user to like photos
 after they have been posted, compare it to the average, and then determine the
 probability that a given user is a robot - again with "high", "moderate", and
@@ -14,8 +14,7 @@ then that is considerably more substantial evidence.
 ```sql
 SELECT u.id, u.username, AVG(timestampdiff(SECOND, p.created_at, l.created_at)) AS user_average_time_to_like_sec, 
 ROUND(AVG(AVG(timestampdiff(SECOND, p.created_at, l.created_at))) OVER(), 2) AS site_AVG_time_to_like_sec, -- the reason the average of user average times is being calculated is because it gives 
--- each user equal weight in the calculation by reducing each user to have one data point for their response times to photos, and this is preferable over the above calculation where each 
--- individual response time was included into the calculation, giving users who like more photos more statistical weight. we're just trying to see if individual users are exhibiting behaviors deemed (robotic - ie. too fast)
+-- each user equal weight in the calculation by reducing each user to have one data point for their response times to photos, and this is preferable to including each individual response time was included into the calculation, giving users who like more photos more statistical weight for the site average. 
 ROUND(AVG(timestampdiff(SECOND, p.created_at, l.created_at)) - AVG(AVG(timestampdiff(SECOND, p.created_at, l.created_at))) OVER(), 2) AS time_to_like_diff_from_AVG_sec,
 CASE 
 WHEN AVG(timestampdiff(SECOND, p.created_at, l.created_at)) < 60 THEN 'high'

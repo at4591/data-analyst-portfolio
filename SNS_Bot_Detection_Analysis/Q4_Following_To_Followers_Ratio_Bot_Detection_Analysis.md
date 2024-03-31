@@ -1,5 +1,5 @@
 Below is the fourth in five queries that extract various aspects of user 
-behavior that mimicks typical bot-like behavior on SNS services like instagram. 
+behaviors that mimick typical bot-like behaviors on SNS services like instagram. 
 Specifically, the query below outputs each user's total followers, the site
 average total followers, users' difference from site average, each user's total
 following, site average total following, the difference from site average, 
@@ -17,7 +17,7 @@ SELECT user_id,
 SUM(number_followers) AS total_followers, 
 ROUND(AVG(SUM(number_followers)) OVER(), 2) AS site_AVG_total_followers,
 SUM(number_followers) - ROUND(AVG(SUM(number_followers)) OVER(), 2) AS total_followers_diff_from_AVG,
-SUM(number_following) AS total_following, -- the sum function is used because the union add the two subquerries togeth in rows, so e.g. you have user_id: 1, total_followers: 5, total_following: 0
+SUM(number_following) AS total_following, -- the sum function is used because the union combines the two subquerries together in rows, so e.g. you have user_id: 1, total_followers: 5, total_following: 0
 ROUND(AVG(SUM(number_following)) OVER(), 2) AS site_AVG_total_following,
 -- and then you'll have user_id: 1 again, but with number_of_followers: 0 and number_following: 4. these need to be combined/added and a GROUP BY or COUNT() won't do that, it has to be summed.
 SUM(number_following) - ROUND(AVG(SUM(number_following)) OVER(), 2) AS total_following_diff_from_AVG,
@@ -25,7 +25,7 @@ ROUND((SUM(number_following))/(SUM(number_followers)), 2) AS following_followers
 ROUND(AVG((SUM(number_following))/(SUM(number_followers))) OVER(), 2) AS site_AVG_following_followers_ratio,
 ROUND((SUM(number_following))/(SUM(number_followers)) - AVG((SUM(number_following))/(SUM(number_followers))) OVER(), 2) AS 'following_followers_ratio_diff_from_AVG',
 CASE 
-WHEN ROUND((SUM(number_following))/(SUM(number_followers)), 2) > 5 THEN 'high' -- As mentioned above, the cutoffs would be more consistent with real-world number if they were around 100 and 25 for 'high' and 'moderate', but due to the limitations of the data, 5 and 2.5 were used to simply demonstrate the query.
+WHEN ROUND((SUM(number_following))/(SUM(number_followers)), 2) > 5 THEN 'high' -- As mentioned above, the cutoffs would be more consistent with real-world numbers if they were around 100 and 25 for 'high' and 'moderate', but due to the limitations of the data, 5 and 2.5 were used to simply demonstrate the query.
 WHEN ROUND((SUM(number_following))/(SUM(number_followers)), 2) > 2.5 THEN 'moderate'
 ELSE 'uncertain'
 END AS 'prob_user_is_robot'

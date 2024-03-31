@@ -1,5 +1,5 @@
 Below is the third in five queries that extract various aspects of user 
-behavior that mimicks typical bot-like behavior on SNS services like instagram. 
+behaviors that mimick typical bot-like behaviors on SNS services like instagram. 
 Specifically, the query below outputs the number of photos each user has posted,
 compares that to the site average, the number of likes sent by each user, 
 compares that against the site average, the likes-to-photos ratio for each user,
@@ -29,11 +29,11 @@ SELECT
     (AVG(l.num_likes_sent) OVER() * 1.0) / AVG(p.num_photos) OVER() AS site_AVG_likes_photos_ratio,
     (l.num_likes_sent / p.num_photos) - ((AVG(l.num_likes_sent) OVER() * 1.0) / AVG(p.num_photos) OVER()) AS likes_photos_ratio_diff_from_AVG,
     CASE 
-        WHEN (l.num_likes_sent / p.num_photos) >= 2.5 * ((AVG(l.num_likes_sent) OVER() * 1.0) / AVG(p.num_photos) OVER()) THEN 'high' -- These cutoffs are again solely to work with the current dataset - a more realistic cutoff would be 100x and 10x for detecting ‘high’ and ‘moderate’ probabilities that certain users are robots.
+        WHEN (l.num_likes_sent / p.num_photos) >= 2.5 * ((AVG(l.num_likes_sent) OVER() * 1.0) / AVG(p.num_photos) OVER()) THEN 'high' -- These cutoffs are again solely to work with the current dataset - a more realistic cutoff would be 100x and 10x for detecting ‘high’ and ‘moderate’ probabilities that certain users are bots.
         WHEN (l.num_likes_sent / p.num_photos) >= 2 * ((AVG(l.num_likes_sent) OVER() * 1.0) / AVG(p.num_photos) OVER()) THEN 'moderate'
         ELSE 'uncertain'
     END AS prob_user_is_robot
-FROM -- Below the tables are join with subqueries, which ouput the necessary information in small parts. This greatly minimizes error, while also allowing the code to be more modular and easy to read. this is a valuable technique that I recently learned and will be using more often in the future.
+FROM -- Below the tables are joins with subqueries, which ouput the necessary information in small parts. This greatly minimizes error, while also allowing the code to be more modular and easy to read. This is a valuable technique that I recently learned and will be using more often in the future.
     users u
 LEFT JOIN (
     SELECT user_id, COUNT(*) AS num_photos

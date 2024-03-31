@@ -23,8 +23,7 @@ ORDER BY prob_user_is_robot
 CREATE TEMPORARY TABLE Q2_like_time_post_time AS
 SELECT u.id AS user_id, u.username AS username, AVG(timestampdiff(SECOND, p.created_at, l.created_at)) AS user_average_time_to_like_sec, 
 ROUND(AVG(AVG(timestampdiff(SECOND, p.created_at, l.created_at))) OVER(), 2) AS site_AVG_time_to_like_sec, -- the reason the average of user average times is being calculated is because it gives 
--- each user equal weight in the calculation by reducing each user to have one data point for their response times to photos, and this is preferable over the above calculation where each 
--- individual response time was included into the calculation, giving users who like more photos more statistical weight. we're just trying to see if individual users are exhibiting behaviors deemed (robotic - ie. too fast)
+-- each user equal weight in the calculation by reducing each user to have one data point for their response times to photos, and this is preferable to including each individual response time was included into the calculation, giving users who like more photos more statistical weight for the site average. 
 ROUND(AVG(timestampdiff(SECOND, p.created_at, l.created_at)) - AVG(AVG(timestampdiff(SECOND, p.created_at, l.created_at))) OVER(), 2) AS time_to_like_diff_from_AVG_sec,
 CASE 
 WHEN AVG(timestampdiff(SECOND, p.created_at, l.created_at)) < 60 THEN 'high'
@@ -132,7 +131,7 @@ GROUP BY user_id;
 
 
 Below is the final in five queries that extract various aspects of user 
-behavior that mimicks typical bot-like behavior on SNS services like instagram. 
+behaviors that mimick typical bot-like behaviors on SNS services like instagram. 
 Specifically, the query below evaluates how many times each user is determined
 to be at "high", "moderate", and "uncertain". Further, based on the CASE 
 statements below, ouputs the final analysis of a given user being at "high", 
@@ -145,6 +144,14 @@ user, then finally produce the final probabilities. Based on the criteria, no us
 was evaluated as "high" probability for being a bot as the criteria was a bit
 conservative/strict, however, even "moderate" would be cause for concern if this 
 were a real SNS service. 
+
+Ultimately, 64% of the users on the site were determined to be at an "uncertain"
+probability for being a bot - i.e. they did not often exhibit behaviors that were 
+consistent with real bots, and as such are not of concern. However, the rest of
+the 36% of users were determined to be at "moderate" probability of being bots,
+which means they were considered "high" probability in 1-2 of the separate queries,
+or were ebaluate as "moderate" 3 or more times. Because this is a conservative 
+evaluation, these users would be concerning if this was drawn from a real dataset. 
 
 ```sql
 SELECT user_id,

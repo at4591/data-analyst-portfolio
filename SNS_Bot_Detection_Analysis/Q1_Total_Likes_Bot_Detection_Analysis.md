@@ -1,10 +1,10 @@
 Below is the first in five queries that extract various aspects of user 
-behavior that mimicks typical bot-like behavior on SNS services like instagram. 
+behaviors that mimick typical bot-like behaviors on SNS services like instagram. 
 Specifically, the query below is the simplest of the five, as it simply outputs 
 the total likes sent by each user, compares it against the site average, and 
 based on the CASE statements below, determines if a user's probability for being 
 a robot is "high", "moderate", or "uncertain". A "high" would be given if a user's
-likes sent count was considerably over the site average. Ultimately, this query's 
+total likes sent was considerably over the site average. Ultimately, this query's 
 purpose is to give additional context to users' behaviors from a more broad, 
 high-level perspective. 
 
@@ -15,7 +15,7 @@ COUNT(l.photo_id) AS user_total_likes,
 ROUND(AVG(COUNT(l.photo_id)) OVER(), 2) AS site_AVG_total_likes_count,
 COUNT(l.photo_id) - ROUND(AVG(COUNT(l.photo_id)) OVER(), 2) AS total_likes_diff_from_AVG,
 CASE
-WHEN COUNT(l.photo_id) >= 2.5 * ROUND(AVG(COUNT(l.photo_id)) OVER(), 2) THEN 'high' -- The current cutoffs of 2.5x and 1x are set in place for demonstration only due to the limitations of the dataset, however more realistic classifications of ‘high’ and ‘moderate’ probability that given users are actually bot accounts (in light of available real-world social media data) would be around 200x and 100x.
+WHEN COUNT(l.photo_id) >= 2.5 * ROUND(AVG(COUNT(l.photo_id)) OVER(), 2) THEN 'high' -- The current cutoffs of 2.5x and 1x are set in place for demonstration only due to the limitations of the dataset, however more realistic classifications of ‘high’ and ‘moderate’ probability that given users are bot accounts (in light of available real-world social media data) would be around 200x and 100x.
 WHEN COUNT(l.photo_id) >= 1 * ROUND(AVG(COUNT(l.photo_id)) OVER(), 2) THEN 'moderate'
 ELSE 'uncertain'
 END AS prob_user_is_robot
@@ -32,7 +32,7 @@ ORDER BY prob_user_is_robot
 -- Below is the output of the above query:
 
 *** Please note again that this is from simulated data, and this query in particular
-shows more repeated data than the others.*** 
+shows more repeated data than the others. *** 
 
 
 | id  | username              | user_total_likes | site_AVG_total_likes_count | total_likes_diff_from_AVG | prob_user_is_robot |
