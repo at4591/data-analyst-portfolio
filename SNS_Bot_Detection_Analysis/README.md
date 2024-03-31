@@ -16,7 +16,7 @@ each query in the separate files in this repository, there is further overview o
 
 Query 1: Total likes
 
-What this query does:  
+What this query does:
 - sums the total likes sent by each user
 - compares the total likes sent by each user against the site average
 - determines the probability a given user is a bot based on how much their likes sent is greater than the site average
@@ -26,7 +26,7 @@ Of course this query by itself is not powerful enough to determine which account
 
 Query 2: Average time to like photos
 
-What this query does:  
+What this query does:
 - measures the average time a user likes a photo after it has been posted to the site
 - compares each user's average time to like a photo against the site average
 - determines the probability a given user is a bot based on how fast they like photos on average
@@ -34,7 +34,7 @@ What this query does:
 <!-- One key characteristic of SNS bots is speed, and as such, the query here measures the average time a user likes a photo after it has been posted to the site. The idea is that if a user is consistently liking photos within seconds after they have been posted, this is likely not a real user. Moreover, I believe it was particularly important to calculate an average with this query, as it is reasonable for authentic users to be using the service, by chance see a post right after it was uploaded, and like the photo within seconds - this can indeed happen on occasion. However, if a given user is demonstrating this short timeframe between the photo being uploaded and liking the photo over many interactions using the service, it becomes more and more improbable that such an account is authentic. -->
 Query 3: Likes to photos ratio
 
-What this query does:  
+What this query does:
 - measures each user's ratio of likes sent to their photos posted
 - compares each user's ratio to the site average ratio
 - determines the probability a given user is a bot based on how large their ratio is - i.e. large number of likes sent with few photos posted
@@ -42,7 +42,7 @@ What this query does:
 <!-- Another key characteristic of SNS bots, especially on instagram, is their number of likes sent in comparison to their number of photos posted. To gain followers and interactions with real users, bots send an inordinate amount of likes, yet their own profiles rarely have many photos, and even if they do, do not have a human subject, or are advertisements of some kind. Likewise, this query outputs users' likes sent to photos posted ratio, compares that against the average, and finally based on that ratio, determines their probability of being a bot. This query is similar to the first query, in that it extracts the number of likes sent, however, because there are many avid users on sites like instagram, who like photos at a rate far beyond average, this query assesses if a given user's number of photos is commensurate with their number of likes sent. In comparison to a avid user, a bot will have a much more disproportionate ratio. -->
 Query 4: following to followers ratio
 
-What this query does:  
+What this query does:
 - measures each user's ratio of accounts following to their followers
 - compares each user's ratio to the site average ratio
 - determines the probability a given user is a bot based on how large their ratio is
@@ -50,8 +50,8 @@ What this query does:
 
 Query 5: final analysis
 
-What this set of queries does:  
-- four temporary tables are created from the above four queries
+What this set of queries does:
+- four temporary tables (temporary tables are typically used to store intermediate results during a session to perform more complicated queries; in my case, it's necessary because I'm evaluating results from four separate queries) are created from the above four queries
 - sums the number of times each user has received a probability of "high", "moderate", and "uncertain" in a separate temporary table
 - based on how many times a user has been ascribed a particular probability, a final probability is produced as a simple list of user id and a probability of "high", "moderate", and "uncertain"
 - this final analysis doesn't evaluate based on any new criteria, but rather, integrates all of the prior four queries for a holistic analysis
