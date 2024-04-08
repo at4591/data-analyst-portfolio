@@ -14,7 +14,7 @@ then that is considerably more substantial evidence.
 ```sql
 SELECT u.id, u.username, AVG(timestampdiff(SECOND, p.created_at, l.created_at)) AS user_average_time_to_like_sec, 
 ROUND(AVG(AVG(timestampdiff(SECOND, p.created_at, l.created_at))) OVER(), 2) AS site_AVG_time_to_like_sec, -- the reason the average of user average times is being calculated is because it gives 
--- each user equal weight in the calculation by reducing each user to have one data point for their response times to photos, and this is preferable to including each individual response time was included into the calculation, giving users who like more photos more statistical weight for the site average. 
+-- each user equal weight in the calculation by reducing each user to have one data point for their response times to photos, and this is preferable to including each individual response time into the calculation because it would give users who like more photos more statistical weight for the site average. 
 ROUND(AVG(timestampdiff(SECOND, p.created_at, l.created_at)) - AVG(AVG(timestampdiff(SECOND, p.created_at, l.created_at))) OVER(), 2) AS time_to_like_diff_from_AVG_sec,
 CASE 
 WHEN AVG(timestampdiff(SECOND, p.created_at, l.created_at)) < 60 THEN 'high'
