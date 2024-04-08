@@ -1,6 +1,15 @@
 # National_Data_Analyst_Salaries_Comparison
 
 <!--find out the data of the salaries -->
+Introduction
+
+Welcome to my National Data Analyst Salaries Comparison project! The dataset used for this analysis was sourced from [kaggle.com](https://www.kaggle.com/datasets/andrewmvd/data-analyst-jobs) and represents salaries posted on Glassdoor around 2020, amidst the pandemic.
+
+To prepare the dataset for visualization in Tableau, extensive data preprocessing was required. This involved utilizing Excel and Python Pandas functions to parse and modify various information, such as converting salary ranges into minimum and maximum values. Each column presented its own challenges, necessitating careful planning and research.
+
+Additionally, to provide more context around the salaries and their locations, I integrated the salary data with another dataset from [zumper.com](https://www.zumper.com/blog/rental-price-data/), offering valuable insights into the national rental market.
+
+Throughout this project, I aimed to explore trends and disparities in data analyst salaries across different regions, leveraging both quantitative analysis and data visualization techniques.
 
 Geo-spatial visualization of data analyst salaries:  
 - Displays red, orange, and green spheres across various US cities to indicate low, medium, and high salary ranges, respectively
