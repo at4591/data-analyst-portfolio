@@ -4,7 +4,7 @@
 
 Welcome to my A/B testing project concerning the efficacy of a "Buy Now" button on consumer spending for a hypothetical e-commerce site! This data was generated in Python and the probability of the results were determined before hand. 
 
-More specifically, the purpose of the study was to employ advanced statistical measures, such as a t-test and z-test to determine if adding a "Buy Now" button will generate higher consumer spending as opposed to the more traditional purchasing procedure of selecting items via an "Add to Cart" button (i.e. no "Buy Now" button present). I hypothesized that the introduction of a "Buy Now" button would not increase sales, as it would not encourage users to browse through multiple items, but rather purchase a single item and feel closure or satiation right then and there. 
+The study utilizes statistical measures like t-tests and z-tests to determine if adding a "Buy Now" button increases consumer spending compared to the traditional "Add to Cart" button. I hypothesized that a "Buy Now" button would not increase sales, as it might discourage browsing and lead to single-item purchases.  
 
 Below, I would like to outline the study and then share the results and code at the bottom.
 
@@ -17,17 +17,21 @@ Does the addition of a call-to-action (CTA) button, such as a "Buy Now" button, 
 If a “Buy Now” button is added to site (not removing the "Add to Cart" button), significantly less products will be purchased, generating less sales, than if there were only an “Add to cart” button.
 
 **Methodology**  
-There are two groups (control and experimental) that are randomly selected where the control group sees the site as is with no “Buy Now” button, just the “Add to cart” button. The experimental group still has the “Add to cart” button, but also a “Buy Now” button that utilizes the users stored payment information and address for an expedited checkout process. The purchase of an item is represented by the variable "clicked" in the code. Further, in the code's design, each user is given five sessions where based on their group, they have a certain probability of making a purchase (0.10 for "Buy Now" and 0.15 for "Add to Cart"). Other experimental minutiae are left out as this is more of a simple showcase of my A/B Test design and can't easily be reflected in the code (such as time of year, new vs recurring users, etc.). 
-
-**Metrics**  
-The main metric of interest is purchases - ultimately, did the user purchase a given item. The purchase is represented by the "clicked" variable, which doesn't merely represent a click of the button, but the final purchase. Moreover, number of items viewed, number of items purchased, and total dollars spent per user are obtained. 
+- **Groups**: Two groups (control and experimental) were randomly selected.  
+  - **Control Group**: Only the "Add to Cart" button.  
+  - **Experimental Group**: Both "Add to Cart" and "Buy Now" buttons, using stored payment info for expedited checkout.  
+- **Sessions**: Each user had five sessions with purchase probabilities of 0.10 for "Buy Now" and 0.15 for "Add to Cart". Also, the number of items viewed per session was randomly selected (1-10).  
+- **Metrics**: Main metrics include number of purchases, items viewed, items purchased, and total spend per user.  
 
 **Study limitations**  
 This study is only taking data on an item bases and not obtaining secondary metrics from users, such as demographics, time per session, number of items viewed, etc. Obtaining this information would have complicated the study, and my goal was to obtain a strict baseline for the effect of a "Buy Now" button on user spending between two randomly selected groups. However, the results of this study are a nice launching pad towards pursuing the above mentioned variables in a future study. 
 
 **Results**  
-The full results are brief and can be viewed below, but chiefly, as designed the "Add to Cart" group (control group) exhibited significantly more purchases per session and higher spending overall. The "Add to Cart" group demonstrated a mean of 0.81 purchases at $16.21 spent per session in comparison to the "Buy Now" group's 0.55 purchases and $11.09 spent per session. These results support the hypothesis that the introduction of a "Buy Now" button would result in less consumer purchases and spending per session.  
+The "Add to Cart" group showed significantly more purchases and higher spending overall. Specifically:  
+- **Add to Cart**: 0.81 purchases and $16.21 spent per session.  
+- **Buy Now**: 0.55 purchases and $11.09 spent per session.  
 
+These results support the hypothesis that the "Buy Now" button results in fewer purchases and lower spending per session.  
 
 ### **Below are the outputted results of the study**:
 
@@ -39,11 +43,19 @@ The full results are brief and can be viewed below, but chiefly, as designed the
 | Buy Now           | 0.554709        | 0.774566  | 2495    | 11.094188     | 15.491323 | 2495    |
 
 
-T-test for items purchased: t-statistic = -10.564232002937189, p-value = 8.154455032164342e-26  
-T-test for total spend: t-statistic = -10.564232002937189, p-value = 8.154455032164342e-26  
-The difference in the number of items purchased is statistically significant.  
-The difference in total spend is statistically significant.  
-Z-test for items purchased: z-score = -19.423176766112732, p-value = 0.0, pooled proportion = 0.6828  
+- **T-test for items purchased**:
+  - t-statistic = -10.5642
+  - p-value = 8.15e-26
+- **T-test for total spend**:
+  - t-statistic = -10.5642
+  - p-value = 8.15e-26
+- **Conclusion**:
+  - The difference in the number of items purchased is statistically significant.
+  - The difference in total spend is statistically significant.
+- **Z-test for items purchased**:
+  - z-score = -19.4232
+  - p-value = 0.0
+  - pooled proportion = 0.6828 
 
 
 ### **Code used to simulate study**:
