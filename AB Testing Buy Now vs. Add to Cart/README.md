@@ -33,11 +33,11 @@ Results: The full results are brief and can be viewed below, but chiefly, as des
 | Buy Now           | 0.554709        | 0.774566  | 2495    | 11.094188     | 15.491323 | 2495    |
 
 
-T-test for items purchased: t-statistic = -10.564232002937189, p-value = 8.154455032164342e-26
-T-test for total spend: t-statistic = -10.564232002937189, p-value = 8.154455032164342e-26
-The difference in the number of items purchased is statistically significant.
-The difference in total spend is statistically significant.
-Z-test for items purchased: z-score = -19.423176766112732, p-value = 0.0, pooled proportion = 0.6828
+T-test for items purchased: t-statistic = -10.564232002937189, p-value = 8.154455032164342e-26  
+T-test for total spend: t-statistic = -10.564232002937189, p-value = 8.154455032164342e-26  
+The difference in the number of items purchased is statistically significant.  
+The difference in total spend is statistically significant.  
+Z-test for items purchased: z-score = -19.423176766112732, p-value = 0.0, pooled proportion = 0.6828  
 
 
 **Code used to simulate study**:
