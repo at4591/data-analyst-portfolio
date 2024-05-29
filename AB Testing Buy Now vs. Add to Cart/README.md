@@ -1,6 +1,6 @@
 # A/B Testing: 'Buy Now' vs. 'Add to Cart'
 
-Introduction
+**Introduction**
 
 Welcome to my A/B testing project concerning the efficacy of a "Buy Now" button on consumer spending for a hypothetical e-commerce site! This data was generated in Python and the probability of the results were determined before hand. 
 
@@ -8,7 +8,7 @@ More specifically, the purpose of the study was to employ advanced statistical m
 
 Below, I would like to outline the study and then share the results and code at the bottom.
 
-Study Outline
+**Study Outline**
 
 Question: Does the addition of a call-to-action (CTA) button, such as a "Buy Now" button, generate more sales?
 
@@ -23,7 +23,7 @@ Study limitations: This study is only taking data on an item bases and not obtai
 Results: The full results are brief and can be viewed below, but chiefly, as designed the "Add to Cart" group (control group) exhibited significantly more purchases per session and higher spending overall. The "Add to Cart" group demonstrated a mean of 0.81 purchases at $16.21 spent per session in comparison to the "Buy Now" group's 0.55 purchases and $11.09 spent per session. These results support the hypothesis that the introduction of a "Buy Now" button would result in less consumer purchases and spending per session.  
 
 
-Below are the outputted results of the study:
+**Below are the outputted results of the study**:
 
 |                   | Items Purchased |           |         | Total Spend   |           |         |
 |-------------------|-----------------|-----------|---------|---------------|-----------|---------|
@@ -40,7 +40,7 @@ The difference in total spend is statistically significant.
 Z-test for items purchased: z-score = -19.423176766112732, p-value = 0.0, pooled proportion = 0.6828
 
 
-Code used to simulate study:
+**Code used to simulate study**:
 
 ```python
 import random
