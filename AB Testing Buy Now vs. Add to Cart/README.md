@@ -14,17 +14,14 @@ Below, I would like to outline the study and then share the results and code at 
 Does the addition of a call-to-action (CTA) button, such as a "Buy Now" button, generate more sales?
 
 **Hypothesis**  
-If a “Buy Now” button is added to site (not removing the "Add to Cart" button), significantly less products will be purchased, generating less sales, than if there were only an “Add to cart” button.
+If a “Buy Now” button is added to the site (but not removing the "Add to Cart" button), significantly less products will be purchased, generating less sales, than if there were only an “Add to cart” button.
 
 **Methodology**  
 - **Groups**: Two groups (control and experimental) were randomly selected.  
-  - **Control Group**: Only the "Add to Cart" button.  
-  - **Experimental Group**: Both "Add to Cart" and "Buy Now" buttons, using stored payment info for expedited checkout.  
+  - **Control Group**: Only the "Add to Cart" button was displayed.  
+  - **Experimental Group**: Both "Add to Cart" and "Buy Now" buttons were displayed, using stored payment info for expedited checkout.  
 - **Sessions**: Each user had five sessions with purchase probabilities of 0.10 for "Buy Now" and 0.15 for "Add to Cart". Also, the number of items viewed per session was randomly selected (1-10).  
 - **Metrics**: Main metrics include number of purchases, items viewed, items purchased, and total spend per user.  
-
-**Study limitations**  
-This study is only taking data on an item bases and not obtaining secondary metrics from users, such as demographics, time per session, number of items viewed, etc. Obtaining this information would have complicated the study, and my goal was to obtain a strict baseline for the effect of a "Buy Now" button on user spending between two randomly selected groups. However, the results of this study are a nice launching pad towards pursuing the above mentioned variables in a future study. 
 
 **Results**  
 The "Add to Cart" group showed significantly more purchases and higher spending overall. Specifically:  
@@ -57,6 +54,8 @@ These results support the hypothesis that the "Buy Now" button results in fewer 
   - p-value = 0.0
   - pooled proportion = 0.6828 
 
+**Study limitations**  
+This study only collects data on a per-item basis and does not include secondary metrics such as user demographics, type of user, time per session, or the number of items viewed. Obtaining this information would have complicated the study, and thus were excluded to focus on the primary effects of a "Buy Now" button on user spending. However, the results provide a solid foundation for follow-up studies that can incorporate the above variables. 
 
 ### **Code used to simulate study**:
 
