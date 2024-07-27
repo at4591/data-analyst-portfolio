@@ -5,21 +5,23 @@ Introduction
 
 Welcome to my National Data Analyst Salaries Comparison project! The dataset used for this analysis was sourced from [kaggle.com](https://www.kaggle.com/datasets/andrewmvd/data-analyst-jobs) and represents salaries posted on Glassdoor around 2020, amidst the pandemic.
 
-To prepare the dataset for visualization in Tableau, extensive data preprocessing was required. This involved utilizing Excel and Python Pandas functions to parse and modify various information, such as converting salary ranges into minimum and maximum values. Each column presented its own challenges, necessitating careful planning and research.
+To prepare the dataset for visualization in Tableau, extensive data preprocessing was required. This involved utilizing Excel and Python Pandas functions to parse and modify various information, such as converting salary ranges into minimum and maximum values. Each column presented its own challenges, necessitating, careful planning and research.
 
 Additionally, to provide more context around the salaries and their locations, I integrated the salary data with another dataset from [zumper.com](https://www.zumper.com/blog/rental-price-data/), offering valuable insights into the national rental market.
 
-Throughout this project, I aimed to explore trends and disparities in data analyst salaries across different regions, leveraging both quantitative analysis and data visualization techniques.
+Throughout this project, I aimed to explore trends and disparities in data analyst salaries across different US regions, leveraging both quantitative analysis and data visualization techniques.
 
-Geo-spatial visualization of data analyst salaries:  
-- Displays red, orange, and green spheres across various US cities to indicate low, medium, and high salary ranges, respectively
-- Sizes of the spheres also indicate salary, with larger spheres representing higher salaries
-- Hovering the mouse over a city will display a pop-up window with information that includes city, state, and the average data analyst salary in that area, as well as the average 1 and 2 bedroom rent along with its national ranking, if available.
-- On the right side of the screen, toggles for state and city are available if the user wishes to view only select locations
+Outline of the data analyst salaries dashboard:  
+- The top-left bar chart ranks US cities by savings potential considering their location's average salary and 2 bedroom rent cost.  
+- The top-right bar chart ranks US cities by employee satisfaction. Hovering the mouse over a given bar will also reveal the average salary. 
+- The bottom-left geospatial visualization displays gray to orange spheres to indicate salary ranges (orange, larger sized spheres indicate higher salaries). Hovering the mouse over them will reveal average 1 and 2 bedroom rent costs, as well as their national rent ranking (rank 1 being most expensive). Please note that rent and rent ranking information is not available for all cities. 
 
-[Link to Tableau visualization](https://public.tableau.com/app/profile/aryan.tehrani/viz/LabelPractice/SalariesDashboard?publish=yes)
+[Link to Tableau dashboard](https://public.tableau.com/app/profile/aryan.tehrani/viz/LabelPractice/SalariesDashboard?publish=yes)
 
 
+
+
+<!--
 Salary Minus Rent Visualization:  
 - A chart that displays select cities along with their rent ranking, average one and two bedroom rent costs, average data analyst salary for the city, and their savings after a year of paying for a one and two bedroom home
 - The results are color-coded red, orange, and green to indicate low, medium, and high savings after rent, respectively
@@ -39,7 +41,7 @@ Salary by State Visualization:
 
 [Link to Tableau visualization](https://public.tableau.com/app/profile/aryan.tehrani/viz/LabelPractice/SalariesDashboard?publish=yes)
 
-
+-->
 
 
 
