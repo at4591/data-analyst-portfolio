@@ -15,6 +15,7 @@ Outline of the data analyst salaries dashboard:
 - The top-left bar chart ranks US cities by savings potential considering their location's average salary and 2 bedroom rent cost.  
 - The top-right bar chart ranks US cities by employee satisfaction. Hovering the mouse over a given bar will also reveal the average salary. 
 - The bottom-left geospatial visualization displays gray to orange spheres to indicate salary ranges (orange, larger sized spheres indicate higher salaries). Hovering the mouse over them will reveal average 1 and 2 bedroom rent costs, as well as their national rent ranking (rank 1 being most expensive). Please note that rent and rent ranking information is not available for all cities. 
+- The bottom-right graph ranks states by employee rating (job satisfaction).
 
 [Link to Tableau dashboard](https://public.tableau.com/app/profile/aryan.tehrani/viz/LabelPractice/SalariesDashboard?publish=yes)
 
